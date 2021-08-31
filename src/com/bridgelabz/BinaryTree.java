@@ -6,6 +6,7 @@ public class BinaryTree {
         bst.add(56);
         bst.add(30);
         bst.add(70);
+        bst.getSize();
 
     }
 }
