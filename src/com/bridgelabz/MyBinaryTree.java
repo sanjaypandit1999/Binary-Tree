@@ -40,4 +40,25 @@ public class MyBinaryTree<T extends Comparable<T>> {
 
         return size;
     }
+    public void searchElement(T data) {
+        BinaryNode<T> currentNode = this.searchRecursively(root, data);
+        if(currentNode == null){
+            System.out.println("Data not found");
+        }
+        else
+        System.out.println(currentNode.data + " Data Found");
+    }
+
+    private BinaryNode<T> searchRecursively(BinaryNode<T> currentNode, T data) {
+        if (currentNode == null || currentNode.data == data)
+            return currentNode;
+
+        if (data.compareTo(currentNode.data) < 0)
+            return searchRecursively(currentNode.left, data);
+
+        if (data.compareTo(currentNode.data) > 0)
+            return searchRecursively(currentNode.right, data);
+
+        return currentNode;
+    }
 }
